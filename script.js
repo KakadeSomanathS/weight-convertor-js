@@ -2,6 +2,8 @@ const form = document.querySelector("#form");
 const inputEle = document.querySelector("#input");
 const btn = document.querySelector(".btn");
 const result = document.querySelector("#result");
+const error = document.querySelector("#error");
+
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -11,7 +13,9 @@ form.addEventListener("submit", (e) => {
 const formValidation = () => {
   if (inputEle.value === "" || inputEle.value < 0) {
     console.log("Error");
+    error.textContent="Please Enter the valid weight"
   } else {
+    error.textContent = "";
     console.log("Success");
     acceptData();
   }
